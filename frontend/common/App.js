@@ -1,11 +1,9 @@
 import React from 'react';
 import { InstantRemixing, FeedSdk } from '@withkoji/vcc';
+import './assets/scss/phone.scss';
+import Header from './components/header';
 
 class App extends React.Component {
-  state = {
-    userName: 'sdfsd'
-  }
-
   constructor(props) {
     super(props);
     this.instantRemixing = new InstantRemixing();
@@ -20,19 +18,38 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.instantRemixing.get(['userSettings', 'userName']), 'sdfdsf')
- this.instantRemixing.onValueChanged((path, newValue) => {
-   console.log('sdfsd')
+    this.instantRemixing.onValueChanged((path, newValue) => {
       this.setState({
-        userName: this.instantRemixing.get(['userSettings', 'userName'])
+        userName: newValue
       });
     })
   }
 
   render() {
     return (
-      <div onClick={() => this.instantRemixing.onPresentControl(['userSettings', 'userName'])}>{ this.state.userName }</div>
-    );
+      <div>
+        <div className="marvel-device iphone-x">
+          <div className="notch">
+            <div className="camera" />
+            <div className="speaker" />
+          </div>
+          <div className="top-bar" />
+          <div className="sleep" />
+          <div className="bottom-bar" />
+          <div className="volume" />
+          <div className="overflow">
+            <div className="shadow shadow--tr" />
+            <div className="shadow shadow--tl" />
+            <div className="shadow shadow--br" />
+            <div className="shadow shadow--bl" />
+          </div>
+          <div className="inner-shadow" />
+          <div className="screen">
+            <Header isRemixing={true} />
+          </div>
+        </div>
+      </div>
+    )
   }
 }
 
