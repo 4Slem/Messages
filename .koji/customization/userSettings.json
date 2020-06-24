@@ -1,0 +1,26 @@
+{
+  "userSettings": {
+    "userName": "sdffsfsfsf dfdsfds",
+    "userImage": ""
+  },
+  "@@editor": [
+    {
+      "key": "userSettings",
+      "name": "User settings",
+      "icon": "⚙️",
+      "source": "userSettings.json",
+      "fields": [
+        {
+          "key": "userName",
+          "name": "User name",
+          "type": "text"
+        },
+        {
+          "key": "userImage",
+          "name": "User image",
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
