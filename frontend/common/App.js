@@ -25,17 +25,18 @@ class App extends React.Component {
     });
 
     instantRemixing.onValueChanged((path, newValue) => {
-      if ((path[0] && path[0] === 'userSettings') && path[1]) {
-        if (path[1] === 'userName') {
-          this.props.editUserName(newValue)
-        } else if (path[1] === 'userImage') {
-          this.props.editUserImage(newValue);
-        }
-      } else if ((path[0] && path[0] === 'messagesSettings') && path[1]) {
-        if (path[1] === 'editMessage') {
-          this.props.editMessage(newValue);
-        }
-      }
+      console.log('newValue', newValue)
+      // if ((path[0] && path[0] === 'userSettings') && path[1]) {
+      //   if (path[1] === 'userName') {
+      //     this.props.editUserName(newValue)
+      //   } else if (path[1] === 'userImage') {
+      //     this.props.editUserImage(newValue);
+      //   }
+      // } else if ((path[0] && path[0] === 'messagesSettings') && path[1]) {
+      //   if (path[1] === 'editMessage') {
+      //     this.props.editMessage(newValue);
+      //   }
+      // }
     });
 
     instantRemixing.ready();

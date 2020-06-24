@@ -18,7 +18,14 @@ const Editing = (props) => {
 
     const select = (message) => {
       props.selectMessage(message);
-      props.instantRemixing.onSetValue(['messagesSettings', 'editMessage'], message);
+      console.log(message.message)
+      message.id = (Math.random() * 1000).toString();
+      try {
+        props.instantRemixing.onSetValue(['messagesSettings', 'editMessage'], message);
+      } catch (e) {
+        console.log(e);
+      }
+      
     //   setTimeout(() => {
     //     props.instantRemixing.onPresentControl(['messagesSettings', 'editMessage']);
     //   }, 100);
@@ -34,12 +41,12 @@ const Editing = (props) => {
           deleteAllMessages={deleteAllMessages}
         />
         
-        <div class="messages-list">
+        <div className="messages-list">
           {
-            props.messages.list.map((item) => {
+            props.messages.list.map((item, i) => {
               return (
                 <>
-                  { !item.edit ? <Message data={item} click={() => select(item)} /> : <EditMessage data={item} click={() => select(item)} /> }
+                { !item.edit ? <Message data={item} click={() => select(item)} key={i} /> : <EditMessage key={i} data={item} click={() => select(item)} /> }
                 </>
               );
             })

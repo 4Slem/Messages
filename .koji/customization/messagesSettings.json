@@ -1,10 +1,9 @@
 {
   "messagesSettings": {
     "editMessage": {
-      "direction": "receiver",
-      "message": "receiver",
-      "id": "299cfbb6-f9a9-4347-a35a-c3b709ba3825",
-      "edit": true
+      "direction": "",
+      "message": "",
+      "id": ""
     },
     "messages": [
       {

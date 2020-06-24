@@ -3,7 +3,7 @@ import { ON_SET_REMIXING } from '../actions/vcc.js';
 
 const initialState = {
   instantRemixing: new InstantRemixing(),
-  isRemixing: false
+  isRemixing: true
 };
 
 const reducer = (state = initialState, action) => {
