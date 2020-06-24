@@ -1,29 +1,14 @@
 {
   "messagesSettings": {
-    "name": "sdfsd",  
+    "name": "sdfsd",
     "editMessage": {
-      "direction": "receiver",
-      "message": "receiver",
-      "id": "299cfbb6-f9a9-4347-a35a-c3b709ba3825",
+      "direction": "sender",
+      "message": "sender",
+      "id": "76de58ba-9da4-4a31-ae92-c9de8bcd6f07",
       "edit": true
     },
-    "messages": [
-      {
-        "direction": "receiver",
-        "message": "receiver",
-        "id": "299cfbb6-f9a9-4347-a35a-c3b709ba3825"
-      },
-      {
-        "direction": "sender",
-        "message": "sender",
-        "id": "76de58ba-9da4-4a31-ae92-c9de8bcd6f07"
-      }
-    ],
-    "receiverMessage": {
-      "message": "sdfsdfsdfsdfsdfsfs",
-      "imgSrc": null,
-      "id": 10000
-    }
+    "messages": null,
+    "messeges": null
   },
   "@@editor": [
     {

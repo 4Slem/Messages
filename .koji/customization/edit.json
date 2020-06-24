@@ -1,0 +1,50 @@
+{
+  "meditSettings": {
+    "receiverMessage": {
+      "message": "",
+      "imgSrc": null,
+      "id": 10000
+    },
+    "editMessage": {
+      "direction": "receiver",
+      "message": "receiver",
+      "id": "299cfbb6-f9a9-4347-a35a-c3b709ba3825",
+      "edit": true
+    }
+  },
+  "@@editor": [
+    {
+      "key": "meditSettings",
+      "name": "meditSettings",
+      "icon": "⚙️",
+      "source": "meditSettings.json",
+      "fields": [
+        {
+          "key": "receiverMessage",
+          "name": "Receiver Messages",
+          "description": "Receiver message",
+          "type": "object<ReceiverMessage>",
+          "typeOptions": {
+            "ReceiverMessage": {
+              "message": {
+                "name": "message",
+                "description": "Message",
+                "type": "text"
+              },
+              "imgSrc": {
+                "name": "imgSrc",
+                "description": "Image Source",
+                "type": "image"
+              },
+              "id": {
+                "name": "id",
+                "description": "ID",
+                "type": "text"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

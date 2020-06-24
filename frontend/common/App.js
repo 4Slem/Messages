@@ -25,6 +25,7 @@ class App extends React.Component {
     });
 
     instantRemixing.onValueChanged((path, newValue) => {
+      console.log(newValue)
       if ((path[0] && path[0] === 'userSettings') && path[1]) {
         if (path[1] === 'userName') {
           this.props.editUserName(newValue)
@@ -34,6 +35,8 @@ class App extends React.Component {
       } else if ((path[0] && path[0] === 'messagesSettings') && path[1]) {
         if (path[1] === 'editMessage') {
           this.props.editMessage(newValue);
+        } else if (path[1] === 'messages') {
+          console.log('delet')
         }
       }
     });

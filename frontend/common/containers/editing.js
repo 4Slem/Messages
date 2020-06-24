@@ -13,17 +13,15 @@ const Editing = (props) => {
     };
 
     const deleteAllMessages = () => {
-      props.instantRemixing.onPresentControl(['messagesSettings']);
+      props.instantRemixing.onSetValue(['messagesSettings', 'messages'], null);
     };
 
     const select = (message) => {
       props.selectMessage(message);
       props.instantRemixing.onSetValue(['messagesSettings', 'editMessage'], message);
-    }
-
-    const editReceiverMessage = () => {
-      console.log('sdfdsf')
-      props.instantRemixing.onPresentControl(['messagesSettings', 'receiverMessage']);
+    //   setTimeout(() => {
+    //     props.instantRemixing.onPresentControl(['messagesSettings', 'editMessage']);
+    //   }, 100);
     }
 
     return (
@@ -36,20 +34,16 @@ const Editing = (props) => {
           deleteAllMessages={deleteAllMessages}
         />
         
-        <div className="messages-list">
+        <div class="messages-list">
           {
-            props.messages.list.map((item, i) => {
+            props.messages.list.map((item) => {
               return (
                 <>
-                { !item.edit ? <Message data={item} click={() => select(item)} key={i} /> : <EditMessage key={i} data={item} /> }
+                  { !item.edit ? <Message data={item} click={() => select(item)} /> : <EditMessage data={item} click={() => select(item)} /> }
                 </>
               );
             })
           }
-        </div>
-        <div className="messages-controls">
-            <EditMessage data={props.messages.list[1]} editMessage={editReceiverMessage}  />
-            <EditMessage data={props.messages.list[0]}  />
         </div>
       </>
     );
