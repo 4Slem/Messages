@@ -1,0 +1,17 @@
+.message {
+  border-radius: 15px;
+  font-size: 17px;
+  line-height: 20px;
+  color: #000;
+  padding: 7px 12px;
+  background: #E5E5EA;
+  margin-bottom: 11px;
+  align-self: flex-start;
+  cursor: pointer;
+  transition: .3s;
+  &.receiver {
+    background: #138AFB;
+    align-self: flex-end;
+    color: #FFFFFF;
+  }
+}

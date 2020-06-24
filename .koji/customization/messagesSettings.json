@@ -1,5 +1,12 @@
 {
   "messagesSettings": {
+    "editMessage": {
+      "direction": "sender",
+      "message": "sender",
+      "imgSrc": null,
+      "id": "76de58ba-9da4-4a31-ae92-c9de8bcd6f07",
+      "edit": true
+    },
     "messages": [
       {
         "direction": "receiver",
@@ -22,6 +29,35 @@
       "icon": "⚙️",
       "source": "messagesSettings.json",
       "fields": [
+        {
+          "key": "editMessage",
+          "name": "Edit message",
+          "type": "object<Message>",
+          "typeOptions": {
+            "Message": {
+              "message": {
+                "name": "message",
+                "description": "Message",
+                "type": "text"
+              },
+              "imgSrc": {
+                "name": "imgSrc",
+                "description": "Image Source",
+                "type": "image"
+              },
+              "direction": {
+                "name": "direction",
+                "description": "Direction",
+                "type": "text"
+              },
+              "id": {
+                "name": "id",
+                "description": "ID",
+                "type": "text"
+              }
+            }
+          }
+        },
         {
           "key": "messages",
           "name": "Messages",

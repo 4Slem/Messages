@@ -1,5 +1,5 @@
-const EDIT_USER_NAME = 'EDIT_USER_NAME';
-const EDIT_USER_IMAGE = 'EDIT_USER_IMAGE';
+export const EDIT_USER_NAME = 'EDIT_USER_NAME';
+export const EDIT_USER_IMAGE = 'EDIT_USER_IMAGE';
 
 export const editUserName = (payload) => {
     return {

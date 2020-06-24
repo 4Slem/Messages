@@ -5,6 +5,7 @@ import './assets/scss/phone.scss';
 
 import { onSetRemixing } from './store/actions/vcc.js';
 import { editUserName, editUserImage } from './store/actions/user.js';
+import { addMessages, editMessage } from './store/actions/messages.js';
 
 import Editing from './containers/editing.js';
 import Preview from './containers/preview.js';
@@ -30,6 +31,10 @@ class App extends React.Component {
         } else if (path[1] === 'userImage') {
           this.props.editUserImage(newValue);
         }
+      } else if ((path[0] && path[0] === 'messagesSettings') && path[1]) {
+        if (path[1] === 'editMessage') {
+          this.props.editMessage(newValue);
+        }
       }
     });
 
@@ -44,8 +49,7 @@ class App extends React.Component {
   }
 
   initMessages() {
-    const m = this.props.vcc.instantRemixing.get(['messagesSettings', 'messages']);
-    console.log(m);
+    this.props.addMessages(this.props.vcc.instantRemixing.get(['messagesSettings', 'messages']));
   }
 
   render() {
@@ -92,6 +96,12 @@ const mapDispatchToProps = (dispatch) => {
     },
     editUserImage(value) {
       dispatch(editUserImage(value));
+    },
+    addMessages(data) {
+      dispatch(addMessages(data));
+    },
+    editMessage(data) {
+      dispatch(editMessage(data));
     }
   };
 };

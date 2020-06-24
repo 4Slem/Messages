@@ -7,15 +7,13 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch(action.type) {
-    case 'EDIT_USER_NAME': {
-        console.log('EDIT_USER_NAME', action.payload)
+    case EDIT_USER_NAME: {
         return {
             ...state,
             userName: action.payload
         }
     }
-    case 'EDIT_USER_IMAGE': {
-        console.log('EDIT_USER_IMAGE', action.payload)
+    case EDIT_USER_IMAGE: {
         return {
         ...state,
         userImage: action.payload

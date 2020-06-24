@@ -1,0 +1,31 @@
+.edit-message {
+    height: 122px;
+    width: calc(50% + 10px);
+    background: #E5E5EA;
+    color: #000;
+    border-radius:  0 10px 10px 0;
+    align-self: flex-start;
+    font-size: 17px;
+    line-height: 20px;
+    padding: 10px 15px 7px;
+    margin-left: -25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &.receiver {
+        background: #138AFB;
+        color: #fff;
+        align-self: flex-end;
+        margin-right: -25px;
+        border-radius:  10px 0 0 10px;
+    }
+    &__content {
+
+    }
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        &-item {
+        }
+    }
+}
