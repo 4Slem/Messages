@@ -1,23 +1,20 @@
 {
   "messagesSettings": {
     "editMessage": {
-      "direction": "sender",
-      "message": "sender",
-      "imgSrc": null,
-      "id": "76de58ba-9da4-4a31-ae92-c9de8bcd6f07",
+      "direction": "receiver",
+      "message": "receiver",
+      "id": "299cfbb6-f9a9-4347-a35a-c3b709ba3825",
       "edit": true
     },
     "messages": [
       {
         "direction": "receiver",
         "message": "receiver",
-        "imgSrc": null,
         "id": "299cfbb6-f9a9-4347-a35a-c3b709ba3825"
       },
       {
         "direction": "sender",
         "message": "sender",
-        "imgSrc": null,
         "id": "76de58ba-9da4-4a31-ae92-c9de8bcd6f07"
       }
     ]
@@ -39,11 +36,6 @@
                 "name": "message",
                 "description": "Message",
                 "type": "text"
-              },
-              "imgSrc": {
-                "name": "imgSrc",
-                "description": "Image Source",
-                "type": "image"
               },
               "direction": {
                 "name": "direction",

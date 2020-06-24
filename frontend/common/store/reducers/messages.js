@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
       case SELECT_MESSAGE: {
           return {
               ...state,
-              editMessage: {...action.payload},
+              editMessage: { ...action.payload },
               list: state.list.map(item => {
                   item.edit = item.id === action.payload.id;
                   return item;
@@ -28,7 +28,7 @@ const reducer = (state = initialState, action) => {
         case EDIT_MESSAGE: {
           return {
               ...state,
-              editMessage: action.payload,
+              editMessage: { ...action.payload },
           };
       }
       default: {
