@@ -49,7 +49,8 @@ class App extends React.Component {
   }
 
   initMessages() {
-    this.props.addMessages(this.props.vcc.instantRemixing.get(['messagesSettings', 'messages']));
+    console.log('dfssd', this.props.vcc.instantRemixing.get(['userSettings']))
+    // this.props.addMessages(this.props.vcc.instantRemixing.get(['messagesSettings', 'messages']));
   }
 
   render() {
