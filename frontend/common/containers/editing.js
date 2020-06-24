@@ -16,9 +16,11 @@ const Editing = (props) => {
       props.instantRemixing.onSetValue(['messagesSettings', 'messages'], null);
     };
 
-    const select = (message) => {
-      props.selectMessage(message);
-      props.instantRemixing.onSetValue(['messagesSettings', 'editMessage'], message);
+    const select = (message, i) => {
+      console.log(i)
+      //props.selectMessage(message);
+      props.instantRemixing.onPresentControl(['messagesSettings', `messages`, i, 'message']);
+      //props.instantRemixing.onSetValue(['messagesSettings', 'editMessage'], message);
     //   setTimeout(() => {
     //     props.instantRemixing.onPresentControl(['messagesSettings', 'editMessage']);
     //   }, 100);
@@ -36,10 +38,10 @@ const Editing = (props) => {
         
         <div class="messages-list">
           {
-            props.messages.list.map((item) => {
+            props.messages.list.map((item, i) => {
               return (
                 <>
-                  { !item.edit ? <Message data={item} click={() => select(item)} /> : <EditMessage data={item} click={() => select(item)} /> }
+                  { !item.edit ? <Message key={i} data={item} click={() => select(item, i)} /> : <EditMessage key={i} data={item} click={() => select(item, i)} /> }
                 </>
               );
             })
