@@ -1,0 +1,58 @@
+{
+  "messagesSettings": {
+    "messages": [
+      {
+        "direction": "receiver",
+        "message": "receiver",
+        "imgSrc": null,
+        "id": "299cfbb6-f9a9-4347-a35a-c3b709ba3825"
+      },
+      {
+        "direction": "sender",
+        "message": "sender",
+        "imgSrc": null,
+        "id": "76de58ba-9da4-4a31-ae92-c9de8bcd6f07"
+      }
+    ]
+  },
+  "@@editor": [
+    {
+      "key": "messagesSettings",
+      "name": "Messages settings",
+      "icon": "⚙️",
+      "source": "messagesSettings.json",
+      "fields": [
+        {
+          "key": "messages",
+          "name": "Messages",
+          "description": "List of messages",
+          "type": "object<Message>[]",
+          "typeOptions": {
+            "Message": {
+              "message": {
+                "name": "message",
+                "description": "Message",
+                "type": "text"
+              },
+              "imgSrc": {
+                "name": "imgSrc",
+                "description": "Image Source",
+                "type": "image"
+              },
+              "direction": {
+                "name": "direction",
+                "description": "Direction",
+                "type": "text"
+              },
+              "id": {
+                "name": "id",
+                "description": "ID",
+                "type": "text"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

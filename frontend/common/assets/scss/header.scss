@@ -42,6 +42,7 @@
     background-color: #eaeaea;
     background-position: center;
     background-size: cover;
+    cursor: pointer;
   }
   &__title {
     font-weight: 500;
@@ -54,6 +55,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
+    cursor: pointer;
   }
 }
 
@@ -62,6 +64,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   &__icon {
     display: block;
   }

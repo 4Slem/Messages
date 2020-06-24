@@ -1,28 +1,51 @@
 import React from 'react';
-import { InstantRemixing, FeedSdk } from '@withkoji/vcc';
+import { connect } from 'react-redux';
+import { FeedSdk } from '@withkoji/vcc';
 import './assets/scss/phone.scss';
-import Header from './components/header';
+
+import { onSetRemixing } from './store/actions/vcc.js';
+import { editUserName, editUserImage } from './store/actions/user.js';
+
+import Editing from './containers/editing.js';
+import Preview from './containers/preview.js';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.instantRemixing = new InstantRemixing();
-    this.instantRemixing.onSetRemixing((isRemixing) => {
-      this.isRemixing = isRemixing;
-      console.log('this.isRemixing', this.isRemixing)
+  componentDidMount() {
+    this.init();
+    this.initUser();
+    this.initMessages();
+  }
+
+  init() {
+    const instantRemixing = this.props.vcc.instantRemixing;
+
+    instantRemixing.onSetRemixing((isRemixing) => {
+      this.props.onSetRemixing(isRemixing);
     });
 
-    this.instantRemixing.ready();
+    instantRemixing.onValueChanged((path, newValue) => {
+      if ((path[0] && path[0] === 'userSettings') && path[1]) {
+        if (path[1] === 'userName') {
+          this.props.editUserName(newValue)
+        } else if (path[1] === 'userImage') {
+          this.props.editUserImage(newValue);
+        }
+      }
+    });
+
+    instantRemixing.ready();
     this.feed = new FeedSdk();
     this.feed.load();
   }
 
-  componentDidMount() {
-    this.instantRemixing.onValueChanged((path, newValue) => {
-      this.setState({
-        userName: newValue
-      });
-    })
+  initUser() {
+    this.props.editUserName(this.props.vcc.instantRemixing.get(['userSettings', 'userName']));
+    this.props.editUserImage(this.props.vcc.instantRemixing.get(['userSettings', 'userImage']));
+  }
+
+  initMessages() {
+    const m = this.props.vcc.instantRemixing.get(['messagesSettings', 'messages']);
+    console.log(m);
   }
 
   render() {
@@ -45,7 +68,7 @@ class App extends React.Component {
           </div>
           <div className="inner-shadow" />
           <div className="screen">
-            <Header isRemixing={true} />
+            {this.props.vcc.isRemixing ?  <Editing /> : <Preview />}
           </div>
         </div>
       </div>
@@ -53,4 +76,24 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    vcc: state.vccReducer,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSetRemixing(value) {
+      dispatch(onSetRemixing(value));
+    },
+    editUserName(value) {
+      dispatch(editUserName(value));
+    },
+    editUserImage(value) {
+      dispatch(editUserImage(value));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

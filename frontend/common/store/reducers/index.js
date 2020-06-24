@@ -2,12 +2,12 @@ import { combineReducers } from 'redux';
 
 import userReducer from './user';
 import messagesReducer from './messages';
-import vcc from './vcc';
+import vccReducer from './vcc';
 
 const rootReducer = combineReducers({
   userReducer,
   messagesReducer,
-  vcc,
+  vccReducer,
 });
 
 export default rootReducer;
