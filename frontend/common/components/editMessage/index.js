@@ -4,11 +4,11 @@ import picureIco from '../../assets/icons/picture.svg'
 import trashIco from '../../assets/icons/trash-black.svg'
 import sentIco from '../../assets/icons/sent.svg'
 
-const EditMessage = ({ data, click }) => {
+const EditMessage = ({ data, editMessage }) => {
     return (
-        <div className={`edit-message ${data.direction === 'receiver' ? 'receiver' : ''}`} onClick={click}>
-            { data.message }
-            <div className="edit-message__content">
+        <div className={`edit-message ${data.direction === 'receiver' ? 'receiver' : ''}`}>
+            <div className="edit-message__content" onClick={editMessage}>
+                { data.message }
             </div>
             <div className="edit-message__footer">
                 <div className="edit-message__footer-item">

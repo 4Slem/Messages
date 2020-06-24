@@ -1,9 +1,9 @@
 {
   "messagesSettings": {
     "editMessage": {
-      "direction": "",
-      "message": "",
-      "id": ""
+      "direction": "sender",
+      "message": "sender",
+      "id": "76de58ba-9da4-4a31-ae92-c9de8bcd6f07"
     },
     "messages": [
       {
@@ -15,8 +15,23 @@
         "direction": "sender",
         "message": "sender",
         "id": "76de58ba-9da4-4a31-ae92-c9de8bcd6f07"
+      },
+      {
+        "direction": "receiver",
+        "message": "receiver",
+        "id": "299cfbb6-f9a9-4347-a35a-c3b709ba38250.8293693109833187"
       }
-    ]
+    ],
+    "receiverMessage": {
+      "message": "receiverMessage",
+      "imgSrc": null,
+      "id": 10000
+    },
+    "senderMessage": {
+      "message": "senderMessage",
+      "imgSrc": null,
+      "id": 10000
+    }
   },
   "@@editor": [
     {
@@ -78,7 +93,57 @@
               }
             }
           }
-        }
+        },
+        {
+          "key": "receiverMessage",
+          "name": "Receiver Messages",
+          "description": "Receiver message",
+          "type": "object<ReceiverMessage>",
+          "typeOptions": {
+            "ReceiverMessage": {
+              "message": {
+                "name": "message",
+                "description": "Message",
+                "type": "text"
+              },
+              "imgSrc": {
+                "name": "imgSrc",
+                "description": "Image Source",
+                "type": "image"
+              },
+              "id": {
+                "name": "id",
+                "description": "ID",
+                "type": "text"
+              }
+            }
+          }
+        },
+        {
+          "key": "senderMessage",
+          "name": "Sender Messages",
+          "description": "Sender message",
+          "type": "object<SenderMessage>",
+          "typeOptions": {
+            "SenderMessage": {
+              "message": {
+                "name": "message",
+                "description": "Message",
+                "type": "text"
+              },
+              "imgSrc": {
+                "name": "imgSrc",
+                "description": "Image Source",
+                "type": "image"
+              },
+              "id": {
+                "name": "id",
+                "description": "ID",
+                "type": "text"
+              }
+            }
+          }
+        },
       ]
     }
   ]

@@ -18,17 +18,12 @@ const Editing = (props) => {
 
     const select = (message) => {
       props.selectMessage(message);
-      console.log(message.message)
-      message.id = (Math.random() * 1000).toString();
-      try {
-        props.instantRemixing.onSetValue(['messagesSettings', 'editMessage'], message);
-      } catch (e) {
-        console.log(e);
-      }
-      
-    //   setTimeout(() => {
-    //     props.instantRemixing.onPresentControl(['messagesSettings', 'editMessage']);
-    //   }, 100);
+      props.instantRemixing.onSetValue(['messagesSettings', 'editMessage'], message);
+    }
+
+    const editReceiverMessage = () => {
+      console.log('sdfdsf')
+      props.instantRemixing.onPresentControl(['messagesSettings', 'receiverMessage']);
     }
 
     return (
@@ -46,11 +41,15 @@ const Editing = (props) => {
             props.messages.list.map((item, i) => {
               return (
                 <>
-                { !item.edit ? <Message data={item} click={() => select(item)} key={i} /> : <EditMessage key={i} data={item} click={() => select(item)} /> }
+                { !item.edit ? <Message data={item} click={() => select(item)} key={i} /> : <EditMessage key={i} data={item} /> }
                 </>
               );
             })
           }
+        </div>
+        <div className="messages-controls">
+            <EditMessage data={props.messages.list[1]} editMessage={editReceiverMessage}  />
+            <EditMessage data={props.messages.list[0]}  />
         </div>
       </>
     );

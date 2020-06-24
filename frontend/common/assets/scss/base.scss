@@ -22,3 +22,9 @@ code {
     flex-direction: column;
     padding: 15px 25px;
 }
+
+.messages-controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+}
