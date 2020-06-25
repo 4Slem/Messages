@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Howl } from 'howler';
+// import { Howl } from 'howler';
 
 import Header from '../components/header';
 import Message from '../components/message';
@@ -20,8 +20,8 @@ class Preview extends React.Component {
   outSound;
 
   componentDidMount() {
-    this.inSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'inSound'])]});
-    this.outSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'outSound'])]});
+    // this.inSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'inSound'])]});
+    // this.outSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'outSound'])]});
     const elem = document.querySelector('.messages-list');
     let i = 0;
     const l = this.props.messages.list.length;
@@ -40,11 +40,11 @@ class Preview extends React.Component {
       if (i === l - 1) {
         clearInterval(this.timer)
       }
-      if (this.props.messages.list[i].direction === 'receiver') {
-        this.inSound.play();
-      } else {
-        this.outSound.play();
-      }
+      // if (this.props.messages.list[i].direction === 'receiver') {
+      //   this.inSound.play();
+      // } else {
+      //   this.outSound.play();
+      // }
 
       this.setState({
         messages: [...this.state.messages, this.props.messages.list[i]]

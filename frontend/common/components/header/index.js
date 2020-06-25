@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../assets/scss/header.scss';
+import './index.scss';
 import arrowBackIco from '../../assets/icons/arrow-back.svg'
 import trashIco from '../../assets/icons/trash.svg'
 
