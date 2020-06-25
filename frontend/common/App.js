@@ -56,6 +56,7 @@ class App extends React.Component {
   }
 
   initControlls() {
+    console.log(this.props.vcc.instantRemixing.get(['messagesSettings']));
     console.log(this.props.vcc.instantRemixing.get(['controlSttings']));
     // console.log(this.props.vcc.instantRemixing.get(['controlSttings', 'senderMessage']))
   }
