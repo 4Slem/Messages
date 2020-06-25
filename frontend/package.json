@@ -23,7 +23,8 @@
     "redux": "^4.0.5",
     "styled-components": "^4.2.0",
     "svg-url-loader": "^6.0.0",
-    "whatwg-fetch": "^3.0.0"
+    "whatwg-fetch": "^3.0.0",
+    "howler": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
