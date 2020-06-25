@@ -10,11 +10,15 @@
   position: relative;
   animation: 2s bulge infinite ease-out;
   margin-bottom: 11px;
+  margin-left: 0;
   &-wrap {
       align-self: flex-start;
       &.left {
           transform: scaleX(-1);
-          align-self: flex-end;
+          .typing-indicator {
+                margin-right: 0;
+                margin-left: auto;
+          }
       }
   }
   &::before,

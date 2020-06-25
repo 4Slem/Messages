@@ -1,4 +1,6 @@
 .message {
+  width: max-content;
+  min-height: 34px;
   border-radius: 15px;
   font-size: 17px;
   line-height: 20px;
@@ -10,14 +12,33 @@
   cursor: pointer;
   transition: .3s;
   word-break: break-all;
-  max-width: calc(50% - 10px);
+  max-width: calc(60%);
+  position: relative;
+  text-align: center;
   &.receiver {
     background: #138AFB;
-    align-self: flex-end;
+    margin-left: auto;
     color: #FFFFFF;
+    &:before {
+      transform: scaleX(-1);
+      right: -4px;
+      left: auto;
+      background-image: url(/common/assets/icons/ar2.svg);
+    }
   }
   img {
       max-width: 100%;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: -4px;
+    background-image: url(/common/assets/icons/ar.svg);
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+
   }
 }
 
@@ -27,8 +48,10 @@
   cursor: pointer;
   transition: .3s;
   max-width: calc(50% - 10px);
+  border-radius: 15px;
+  overflow: hidden;
   &.receiver {
-    align-self: flex-end;
+    margin-left: auto;
   }
   img {
       max-width: 100%;

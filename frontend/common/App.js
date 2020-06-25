@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { FeedSdk } from '@withkoji/vcc';
+import  { FeedSdk } from '@withkoji/vcc';
 import './assets/scss/phone.scss';
 
 import { onSetRemixing } from './store/actions/vcc.js';
@@ -88,7 +88,7 @@ class App extends React.Component {
           </div>
           <div className="inner-shadow" />
           <div className="screen">
-            { this.props.vcc.isRemixing ? <Preview /> : <Editing /> }
+            { !this.props.vcc.isRemixing ? <Preview /> : <Editing /> }
           </div>
         </div>
       </div>

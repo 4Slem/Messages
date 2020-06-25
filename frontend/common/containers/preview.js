@@ -22,7 +22,8 @@ class Preview extends React.Component {
   componentDidMount() {
     this.inSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'inSound'])]});
     this.outSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'outSound'])]});
-    const elem = document.querySelector('.messages-list')[0];
+    const elem = document.querySelector('.messages-list');
+    console.log(elem)
     let i = 0;
     const l = this.props.messages.list.length;
     this.timer = setInterval(() => {
@@ -32,7 +33,7 @@ class Preview extends React.Component {
         });
       } else {
         this.setState({
-          loader: false
+            loader: false
         });
       }
 
@@ -50,9 +51,9 @@ class Preview extends React.Component {
         messages: [...this.state.messages, this.props.messages.list[i]]
       });
 
-      elem.scrollIntoView({behavior: "smooth", block: "end", inline: "end"});
-
       i = i + 1;
+
+      elem.scrollTop = elem.scrollTop + 10000
     },2000);
   }
 

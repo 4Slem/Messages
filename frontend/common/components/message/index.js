@@ -2,7 +2,6 @@ import React from 'react';
 import './index.scss';
 
 const Message = ({ data, click }) => {
-    console.log(data);
     if (data.imgSrc) {
         return (
             <div className={`message-img ${data.direction === 'receiver' ? 'receiver' : ''}`} onClick={click}>
