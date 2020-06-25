@@ -1,5 +1,6 @@
 {
   "messagesSettings": {
+      "roman": "roma",
     "messages": [
       {
         "direction": "receiver",
@@ -31,6 +32,11 @@
       "icon": "⚙️",
       "source": "messagesSettings.json",
       "fields": [
+                {
+          "key": "roma",
+          "name": "roma",
+          "type": "text"
+        },
         {
           "key": "messages",
           "name": "Messages",
