@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import  { FeedSdk } from '@withkoji/vcc';
 import './assets/scss/phone.scss';
-
+import appleIcon from './assets/icons/apple.svg';
 import { onSetRemixing } from './store/actions/vcc.js';
 import { editUserName, editUserImage } from './store/actions/user.js';
 import { addMessages, editMessage } from './store/actions/messages.js';
@@ -26,7 +26,7 @@ class App extends React.Component {
         this.setState({
             loaded: true
         })
-    }, 500)    
+    }, 500);
   }
 
   init() {
@@ -97,9 +97,12 @@ class App extends React.Component {
           </div>
           <div className="inner-shadow" />
             {
-                this.state.loaded &&
+                this.state.loaded ?
                 <div className="screen">
                     { !this.props.vcc.isRemixing ? <Preview /> : <Editing /> }
+                </div> :
+                <div className="preloader">
+                  <img src={appleIcon} className="preloader__img" />
                 </div>
             }
         </div>

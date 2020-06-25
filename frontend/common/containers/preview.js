@@ -22,7 +22,13 @@ class Preview extends React.Component {
   };
 
   componentDidMount() {
-    this.showNewMessage(0);
+    this.init();
+  }
+
+  init() {
+    setTimeout(() => {
+      this.showNewMessage(0);
+    }, 1000);
   }
 
   showNewMessage(i) {

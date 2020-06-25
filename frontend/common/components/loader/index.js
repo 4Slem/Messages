@@ -6,7 +6,7 @@ export default ({isReciver}) => {
     const [animation, setAnimation] = useState(false);
     setTimeout(() => {
         setAnimation(true);
-    }, 10);
+    }, 100);
 
     return (
         <div className={`typing-indicator-wrap ${isReciver === 'receiver' ? 'left' : ''}`}>
