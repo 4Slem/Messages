@@ -12,13 +12,15 @@ class Preview extends React.Component {
   timer = null;
   inSound = null;
   outSound = null;
+  myRef = React.createRef();
 
   constructor(props) {
     super(props);
     this.state = {
       messages: [],
       loader: false,
-      typingText: ''
+      typingText: '',
+      camera: false
     };
   }
 
@@ -57,37 +59,47 @@ class Preview extends React.Component {
 
     //   i = i + 1;
 
-    //   elem.scrollTop = elem.scrollTop + 10000
+    //   this.myRef.scrollTop = elem.scrollTop + 10000
     // },2000);
+
+    
+    console.log('ref', this.myRef);
   }
 
   showNewMessage(i) {
     if (i === this.props.messages.list.length - 1) return;
 
     const item = this.props.messages.list[i];
-    const messageLength = item.message.length;
+    let messageLength = item.message.length;
     const isReciver = item.direction === 'receiver';
     let char = 0;
 
     this.setState({ loader: !isReciver });
+
+    if (item.imgSrc) {
+      messageLength = 15;
+      if (isReciver) {
+        this.setState({ camera: true });
+      }
+    }
 
     this.timer = setInterval(() => {
       if (char === messageLength - 1) {
         clearInterval(this.timer);
         this.setState({
           messages: [...this.state.messages, item],
-          typingText: ''
+          typingText: '',
+          camera: false
         });
+        this.myRef.scrollTop = this.myRef.scrollTop + 10000;
         this.showNewMessage(i + 1);
         return;
       }
 
-      if (isReciver) {
-        this.setState({ typingText: this.state.typingText + item.message[char] })
-      }
+      if (isReciver && !item.imgSrc) { this.setState({ typingText: this.state.typingText + item.message[char] }) }
       
       char = char + 1;
-    }, 200);
+    }, 100);
   }
 
   componentWillUnmount() {
@@ -102,7 +114,7 @@ class Preview extends React.Component {
           userName={this.props.user.userName}
           userImage={this.props.user.userImage}
         />
-        <div className="messages-list">
+        <div ref={(e) => this.myRef = e} className="messages-list">
           {
             this.state.messages.map((item, i) => {
               return (<Message key={i} data={item} />)
@@ -112,7 +124,7 @@ class Preview extends React.Component {
         </div>
         <div className="footer">
           <div className="footer__icon">
-            <img src={cameraIcon} />
+            <img className={`${this.state.camera && 'active'}`} src={cameraIcon} />
           </div>
           <div className="footer__input">
             <input type="text" className="input" placeholder="Message" value={this.state.typingText} />
