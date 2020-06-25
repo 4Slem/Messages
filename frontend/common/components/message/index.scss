@@ -21,7 +21,7 @@
     color: #FFFFFF;
     &:before {
       transform: scaleX(-1);
-      right: -4px;
+      right: -6px;
       left: auto;
       background-image: url(/common/assets/icons/ar2.svg);
     }
@@ -32,12 +32,13 @@
   &:before {
     content: "";
     position: absolute;
-    bottom: -2px;
-    left: -4px;
+    bottom: -1px;
+    left: -6px;
     background-image: url(/common/assets/icons/ar.svg);
     width: 15px;
     height: 15px;
     background-size: contain;
+    z-index: 9;
 
   }
 }
