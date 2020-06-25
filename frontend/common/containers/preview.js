@@ -91,11 +91,9 @@ class Preview extends React.Component {
           userImage={this.props.user.userImage}
         />
         <div ref={(e) => this.myRef = e} className="messages-list">
-          {
-            this.state.messages.map((item, i) => {
+          {this.state.messages.map((item, i) => {
               return (<Message key={i} data={item} />)
-            })
-          }
+          })}
           { this.state.loader && <Loader isReciver={'receive'} /> }
         </div>
         <div className="footer">
