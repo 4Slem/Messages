@@ -1,5 +1,5 @@
 .edit-message {
-    height: 122px;
+    min-height: 122px;
     width: calc(50% + 10px);
     background: #E5E5EA;
     color: #000;
@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 11px;
     &.receiver {
         background: #138AFB;
         color: #fff;
@@ -20,7 +21,9 @@
         border-radius:  10px 0 0 10px;
     }
     &__content {
-
+        word-break: break-all;
+        width: 100%;
+        min-height: 70px;
     }
     &__footer {
         display: flex;

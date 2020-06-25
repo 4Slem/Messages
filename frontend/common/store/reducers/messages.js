@@ -1,4 +1,4 @@
-import { DELETE_ALL_MESSAGES, ADD_MESSAGE, ADD_MESSAGES, SELECT_MESSAGE, EDIT_MESSAGE } from '../actions/messages.js';
+import { ADD_MESSAGE, ADD_MESSAGES, SELECT_MESSAGE, EDIT_MESSAGE, DELETE_MESSAGE, DELETE_ALL_MESSAGES } from '../actions/messages.js';
 
 const initialState = {
     list: [{}, {}],
@@ -8,11 +8,16 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch(action.type) {
       case ADD_MESSAGES: {
-          if (!action.payload) return state;
+          if (!action.payload) return { ...state, list: []};
 
           return {
               ...state,
-              list: action.payload
+              list: action.payload.map(item => {
+                  if (state.editMessage) {
+                    item.edit = state.editMessage.id === item.id;
+                  }
+                  return item;
+              })
           };
       }
       case SELECT_MESSAGE: {
@@ -25,11 +30,27 @@ const reducer = (state = initialState, action) => {
               })
           };
       }
-        case EDIT_MESSAGE: {
+      case EDIT_MESSAGE: {
           return {
               ...state,
               editMessage: { ...action.payload },
           };
+      }
+      case DELETE_MESSAGE: {
+          return {
+              ...state,
+              list: state.list.filter(item => {
+                if (item.id !== action.payload) {
+                    return item;
+                }
+              }),
+          };
+      }
+      case DELETE_ALL_MESSAGES: {
+        return {
+          ...state,
+          list: []
+        }
       }
       default: {
           return state;

@@ -3,6 +3,8 @@ export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const ADD_MESSAGES = 'ADD_MESSAGES';
 export const SELECT_MESSAGE = 'SELECT_MESSAGE';
 export const EDIT_MESSAGE = 'EDIT_MESSAGE';
+export const DELETE_MESSAGE = 'DELETE_MESSAGE';
+
 
 export const deleteAllMessages = () => {
     return {
@@ -37,3 +39,11 @@ export const editMessage = (payload) => {
         payload
     };
 };
+
+export const deleteMessage = (payload) => {
+    return {
+        type: DELETE_MESSAGE,
+        payload
+    };
+};
+

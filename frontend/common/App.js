@@ -15,6 +15,7 @@ class App extends React.Component {
     this.init();
     this.initUser();
     this.initMessages();
+    this.initControlls();
   }
 
   init() {
@@ -25,7 +26,6 @@ class App extends React.Component {
     });
 
     instantRemixing.onValueChanged((path, newValue) => {
-      console.log(newValue)
       if ((path[0] && path[0] === 'userSettings') && path[1]) {
         if (path[1] === 'userName') {
           this.props.editUserName(newValue)
@@ -36,7 +36,7 @@ class App extends React.Component {
         if (path[1] === 'editMessage') {
           this.props.editMessage(newValue);
         } else if (path[1] === 'messages') {
-          console.log('delet')
+          this.props.addMessages(newValue);
         }
       }
     });
@@ -52,8 +52,12 @@ class App extends React.Component {
   }
 
   initMessages() {
-    console.log('dfssd', this.props.vcc.instantRemixing.get(['messagesSettings']))
     this.props.addMessages(this.props.vcc.instantRemixing.get(['messagesSettings', 'messages']));
+  }
+
+  initControlls() {
+    // console.log(this.props.vcc.instantRemixing.get(['controlSttings', 'receiverMessage']));
+    // console.log(this.props.vcc.instantRemixing.get(['controlSttings', 'senderMessage']))
   }
 
   render() {
@@ -76,7 +80,7 @@ class App extends React.Component {
           </div>
           <div className="inner-shadow" />
           <div className="screen">
-            {this.props.vcc.isRemixing ?  <Editing /> : <Preview />}
+            <Editing />
           </div>
         </div>
       </div>

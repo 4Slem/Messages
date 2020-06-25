@@ -1,21 +1,20 @@
 {
-  "meditSettings": {
+  "controlSttings": {
     "receiverMessage": {
       "message": "",
       "imgSrc": null,
       "id": 10000
     },
-    "editMessage": {
-      "direction": "receiver",
-      "message": "receiver",
-      "id": "299cfbb6-f9a9-4347-a35a-c3b709ba3825",
-      "edit": true
+    "senderMessage": {
+      "message": "",
+      "imgSrc": null,
+      "id": 10000
     }
   },
   "@@editor": [
     {
-      "key": "meditSettings",
-      "name": "meditSettings",
+      "key": "controlSttings",
+      "name": "Control settings",
       "icon": "⚙️",
       "source": "meditSettings.json",
       "fields": [
@@ -26,6 +25,31 @@
           "type": "object<ReceiverMessage>",
           "typeOptions": {
             "ReceiverMessage": {
+              "message": {
+                "name": "message",
+                "description": "Message",
+                "type": "text"
+              },
+              "imgSrc": {
+                "name": "imgSrc",
+                "description": "Image Source",
+                "type": "image"
+              },
+              "id": {
+                "name": "id",
+                "description": "ID",
+                "type": "text"
+              }
+            }
+          }
+        },
+        {
+          "key": "senderMessage",
+          "name": "Sender Messages",
+          "description": "Sender message",
+          "type": "object<SenderMessage>",
+          "typeOptions": {
+            "SenderMessage": {
               "message": {
                 "name": "message",
                 "description": "Message",

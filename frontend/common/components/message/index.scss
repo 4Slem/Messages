@@ -9,6 +9,8 @@
   align-self: flex-start;
   cursor: pointer;
   transition: .3s;
+  word-break: break-all;
+  max-width: calc(50% - 10px);
   &.receiver {
     background: #138AFB;
     align-self: flex-end;

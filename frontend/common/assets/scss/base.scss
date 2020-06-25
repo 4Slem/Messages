@@ -21,10 +21,60 @@ code {
     display: flex;
     flex-direction: column;
     padding: 15px 25px;
+    height: calc(100% - 206px);
+    overflow-y: scroll;
 }
 
 .messages-controls {
     display: flex;
     justify-content: space-between;
     padding: 0 25px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px 7px 19px;
+    &__icon {
+        margin-right: 18px;
+    }
+    &__input {
+        width: calc(100% - 50px);
+        .input {
+            border-radius: 31px;
+            border: 1px solid #CECECE;
+            height: 36px;
+            width: 100%;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.3);
+            padding: 0 15px;
+            box-sizing: border-box;
+            &:hover, &:focus, &:active {
+                outline: none;
+                border: 1px solid #CECECE;
+            }
+        }
+    }
+}
+
+.warpper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bottom-line {
+    height: 37px;
+    background: rgb(249, 249, 249);
+    border: 1px solid rgb(232, 232, 234);
+}
+
+.controlls {
+    display: flex;
+    justify-content: space-between;
+    &__item {
+        width: 50%;
+    }
 }
