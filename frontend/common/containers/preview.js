@@ -23,7 +23,6 @@ class Preview extends React.Component {
     // this.inSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'inSound'])]});
     // this.outSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'outSound'])]});
     const elem = document.querySelector('.messages-list');
-    console.log(elem)
     let i = 0;
     const l = this.props.messages.list.length;
     this.timer = setInterval(() => {

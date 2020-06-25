@@ -13,15 +13,28 @@ import Editing from './containers/editing.js';
 import Preview from './containers/preview.js';
 
 class App extends React.Component {
+  state = {
+    loaded: false
+  }
+
   componentDidMount() {
     this.init();
     this.initUser();
     this.initMessages();
     this.initControlls();
+    setTimeout(() => {
+        this.setState({
+            loaded: true
+        })
+    }, 500)    
   }
 
   init() {
     const instantRemixing = this.props.vcc.instantRemixing;
+
+    instantRemixing.ready();
+    this.feed = new FeedSdk();
+    this.feed.load();
 
     instantRemixing.onSetRemixing((isRemixing) => {
       this.props.onSetRemixing(isRemixing);
@@ -46,10 +59,6 @@ class App extends React.Component {
         }
       }
     });
-
-    instantRemixing.ready();
-    this.feed = new FeedSdk();
-    this.feed.load();
   }
 
   initUser() {
@@ -87,9 +96,12 @@ class App extends React.Component {
             <div className="shadow shadow--bl" />
           </div>
           <div className="inner-shadow" />
-          <div className="screen">
-            { !this.props.vcc.isRemixing ? <Preview /> : <Editing /> }
-          </div>
+            {
+                this.state.loaded &&
+                <div className="screen">
+                    { !this.props.vcc.isRemixing ? <Preview /> : <Editing /> }
+                </div>
+            }
         </div>
       </div>
     )
@@ -99,6 +111,7 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     vcc: state.vccReducer,
+    m: state
   };
 };
 
