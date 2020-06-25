@@ -24,6 +24,7 @@
         word-break: break-all;
         width: 100%;
         min-height: 70px;
+        overflow-y: scroll;;
     }
     &__footer {
         display: flex;
@@ -31,5 +32,8 @@
         &-item {
             cursor: pointer;
         }
+    }
+    img {
+        max-width: 100%;
     }
 }

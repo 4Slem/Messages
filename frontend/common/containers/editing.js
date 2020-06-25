@@ -37,7 +37,17 @@ const Editing = (props) => {
       const arr = [...props.messages.list];
       arr.push({...props[key], direction: key === 'receiverMessage' ? 'receiver' : 'sender', id: uuid()});
       props.instantRemixing.onSetValue(['messagesSettings', 'messages'], arr);
+      if (key === 'receiverMessage') {
+        props.instantRemixing.onSetValue(['messagesSettings', 'receiverMessage'], {message: "", imgSrc: null, id: 10000});
+      } else {
+         props.instantRemixing.onSetValue(['messagesSettings', 'senderMessage'], {message: "", imgSrc: null, id: 10000});
+      }
     };
+
+    const edit = () => {
+        console.log('edit')
+      props.selectMessage({hide: true});
+    }
 
     return (
       <div className="warpper">
@@ -66,7 +76,7 @@ const Editing = (props) => {
                             editMessage={() => props.instantRemixing.onPresentControl(['messagesSettings', `messages`, i, 'message'])}
                             deleteMessage={() => deleteM(item, i)}
                             editImage={() => props.instantRemixing.onPresentControl(['messagesSettings', `messages`, i, 'imgSrc'])}
-                            // sentMessage={sent}
+                            sentMessage={edit}
                         /> 
                     }
                 </>

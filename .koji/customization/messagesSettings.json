@@ -20,11 +20,11 @@
         "imgSrc": null,
         "id": "d22cca74-8ce1-4c80-9f1a-4f2148d7a048",
         "direction": "sender",
-        "edit": true
+        "edit": false
       },
       {
         "message": "sdfddfdsdddfssdfdssdfs",
-        "imgSrc": null,
+        "imgSrc": "https://images.koji-cdn.com/14c02947-0b36-4b2b-ace3-6d205bb84e3b/5hkb0-Karen1.jpg",
         "id": "b3053858-0771-494f-a2d6-9a54c0bff65e",
         "direction": "receiver",
         "edit": false
@@ -33,28 +33,45 @@
         "message": "message 3",
         "imgSrc": null,
         "id": "b46177ff-60bf-46d3-9475-52c548c58169",
-        "direction": "receiver"
+        "direction": "receiver",
+        "edit": false
       },
       {
         "message": "message",
-        "imgSrc": null,
+        "imgSrc": "https://images.koji-cdn.com/14c02947-0b36-4b2b-ace3-6d205bb84e3b/ylh5t-download20200602T104828.728.png",
         "id": "c2825533-bcf7-4ddd-a857-2f97672681bc",
-        "direction": "sender"
+        "direction": "sender",
+        "edit": false
       },
       {
         "message": "message",
         "imgSrc": null,
         "id": "e283eea6-7f66-4e2b-8009-534449bb98b0",
-        "direction": "sender"
+        "direction": "sender",
+        "edit": false
+      },
+      {
+        "message": "message 3fsfdsf",
+        "imgSrc": null,
+        "id": "e40cb014-1c3d-4661-866b-5b8657a7816c",
+        "direction": "receiver",
+        "edit": false
+      },
+      {
+        "message": "message 3fsfdsf",
+        "imgSrc": "https://images.koji-cdn.com/14c02947-0b36-4b2b-ace3-6d205bb84e3b/ylh5t-download20200602T104828.728.png",
+        "id": "c0354996-8567-4bab-9ced-d78290efb232",
+        "direction": "receiver",
+        "edit": true
       }
     ],
     "receiverMessage": {
-      "message": "message 3fsf",
-      "imgSrc": null,
+      "message": "sdfdj",
+      "imgSrc": "https://images.koji-cdn.com/14c02947-0b36-4b2b-ace3-6d205bb84e3b/skddb-Theoden.png",
       "id": 10000
     },
     "senderMessage": {
-      "message": "message",
+      "message": "dfddsdfsdfdsfsdsdfdfsfs",
       "imgSrc": null,
       "id": 10000
     }

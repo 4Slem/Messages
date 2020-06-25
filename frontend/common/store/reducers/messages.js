@@ -25,7 +25,11 @@ const reducer = (state = initialState, action) => {
               ...state,
               editMessage: { ...action.payload },
               list: state.list.map(item => {
-                  item.edit = item.id === action.payload.id;
+                  if (action.payload.hide) {
+                      item.edit = false
+                  } else {
+                    item.edit = item.id === action.payload.id;
+                  }
                   return item;
               })
           };

@@ -16,4 +16,21 @@
     align-self: flex-end;
     color: #FFFFFF;
   }
+  img {
+      max-width: 100%;
+  }
+}
+
+.message-img {
+  margin-bottom: 11px;
+  align-self: flex-start;
+  cursor: pointer;
+  transition: .3s;
+  max-width: calc(50% - 10px);
+  &.receiver {
+    align-self: flex-end;
+  }
+  img {
+      max-width: 100%;
+  }
 }
