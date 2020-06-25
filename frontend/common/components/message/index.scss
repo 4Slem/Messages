@@ -10,7 +10,7 @@
   margin-bottom: 11px;
   align-self: flex-start;
   cursor: pointer;
-  transition: .3s;
+  transition: .5s;
   word-break: break-all;
   max-width: calc(60%);
   position: relative;
@@ -21,28 +21,20 @@
     background: #138AFB;
     margin-left: auto;
     color: #FFFFFF;
-    &:before {
+    .message__arrow {
       transform: scaleX(-1);
-      right: -6px;
+      right: -5px;
       left: auto;
-      background-image: url(/common/assets/icons/ar2.svg);
     }
   }
-  img {
-      max-width: 100%;
-  }
-  &:before {
-    content: "";
+  &__arrow {
     position: absolute;
-    bottom: -1px;
-    left: -6px;
-    background-image: url(/common/assets/icons/ar.svg);
+    bottom: -2px;
+    left: -5px;
     width: 15px;
     height: 15px;
     background-size: contain;
     z-index: 9;
-    background-color: red;
-
   }
   &.animation {
       transform: scale(1);
@@ -68,7 +60,7 @@
   &.receiver {
     margin-left: auto;
   }
-  img {
+  &__image {
       max-width: 100%;
   }
 }
