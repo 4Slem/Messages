@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { Howl } from 'howler';
+import { Howl } from 'howler';
 
 import Header from '../components/header';
 import Message from '../components/message';
@@ -26,6 +26,8 @@ class Preview extends React.Component {
   }
 
   init() {
+    this.inSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'inSound'])]});
+    this.outSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'outSound'])]});
     setTimeout(() => {
       this.showNewMessage(0);
     }, 1000);
@@ -57,14 +59,12 @@ class Preview extends React.Component {
           camera: false,
           loader: false
         });
-        // this.inSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'inSound'])]});
-        // this.outSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'outSound'])]});
   
-        // if (this.props.messages.list[i].direction === 'receiver') {
-        //   this.inSound.play();
-        // } else {
-        //   this.outSound.play();
-        // }
+        if (this.props.messages.list[i].direction === 'receiver') {
+          this.inSound.play();
+        } else {
+          this.outSound.play();
+        }
         setTimeout(() => {
           this.myRef.scrollTop = this.myRef.scrollTop + 10000;
         }, 100)
