@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Howl } from 'howler';
+// import { Howl } from 'howler';
 
 import Header from '../components/header';
 import Message from '../components/message';
