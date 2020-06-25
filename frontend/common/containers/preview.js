@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Howl } from 'howler';
 
 import Header from '../components/header';
 import Message from '../components/message';
@@ -15,8 +16,24 @@ class Preview extends React.Component {
   }
 
   timer;
+  inSound;
+  outSound;
 
   componentDidMount() {
+//   var sound = new Howl({
+//       src: ['https://objects.koji-cdn.com/397c3c97-edeb-4bb6-a288-e04fbb7e972c/s9pqj-iphonesend.mp3']
+//     });
+//     setTimeout(() => {
+
+//         sound.play();
+//         console.log('play')
+//     }, 5000)
+  
+
+
+
+        this.inSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'inSound'])]});
+        this.outSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'outSound'])]});
         let i = 0;
         const l = this.props.messages.list.length;
         this.timer = setInterval(() => {
@@ -34,13 +51,21 @@ class Preview extends React.Component {
           if (i === l - 1) {
             clearInterval(this.timer)
           }
-          console.log(this.props.messages.list[i])
+          if (this.props.messages.list[i] !== 'receiver') {
+            this.inSound.play();
+          } else {
+              this.outSound.play();
+          }
+          
           this.setState({
             messages: [...this.state.messages, this.props.messages.list[i]]
           });
 
           i = i + 1;
         },2000);
+
+     
+        console.log(this.inSound);
   }
 
   componentWillUnmount() {
