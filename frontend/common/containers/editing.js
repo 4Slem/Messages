@@ -10,7 +10,6 @@ import EditMessage from '../components/editMessage';
 import cameraIcon from '../assets/icons/camera.svg';
 
 const Editing = (props) => {
-    console.log(props);
     const editVcc = (value) => {
       props.instantRemixing.onPresentControl(['userSettings', value])
     };
