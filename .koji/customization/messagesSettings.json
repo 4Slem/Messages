@@ -20,7 +20,7 @@
         "imgSrc": null,
         "id": "d22cca74-8ce1-4c80-9f1a-4f2148d7a048",
         "direction": "sender",
-        "edit": false
+        "edit": true
       },
       {
         "message": "sdfddfdsdddfssdfdssdfs",
@@ -33,83 +33,72 @@
         "message": "message 3",
         "imgSrc": null,
         "id": "b46177ff-60bf-46d3-9475-52c548c58169",
-        "direction": "receiver",
-        "edit": false
+        "direction": "receiver"
       },
       {
         "message": "message",
         "imgSrc": null,
         "id": "c2825533-bcf7-4ddd-a857-2f97672681bc",
-        "direction": "sender",
-        "edit": false
+        "direction": "sender"
       },
       {
         "message": "message",
         "imgSrc": null,
         "id": "e283eea6-7f66-4e2b-8009-534449bb98b0",
-        "direction": "sender",
-        "edit": false
+        "direction": "sender"
       },
       {
         "message": "message 3fsfdsf",
         "imgSrc": null,
         "id": "e40cb014-1c3d-4661-866b-5b8657a7816c",
-        "direction": "receiver",
-        "edit": false
+        "direction": "receiver"
       },
       {
         "message": "message 3fsfdsf",
         "imgSrc": null,
         "id": "e145a868-541c-4546-a88c-944b81e5184a",
-        "direction": "receiver",
-        "edit": false
+        "direction": "receiver"
       },
       {
         "message": "fdffff",
         "imgSrc": "https://images.koji-cdn.com/14c02947-0b36-4b2b-ace3-6d205bb84e3b/o4oij-download20200602T105209.694.png",
         "id": "c7729c81-a012-4f48-880b-45411aa3fc15",
-        "direction": "receiver",
-        "edit": true
+        "direction": "receiver"
       },
       {
         "message": "dfdffdfdd",
         "imgSrc": "",
         "id": "a02aec89-d587-486b-94b1-444e21cc728f",
-        "direction": "receiver",
-        "edit": false
+        "direction": "receiver"
       },
       {
         "message": "dfdffdfddfddfffdf",
         "imgSrc": "",
         "id": "f12bb551-d79c-4013-9c74-e959d4350bdc",
-        "direction": "receiver",
-        "edit": false
+        "direction": "receiver"
       },
       {
-        "message": "dfgdgdgdfg",
+        "message": "fdfdddsd dfgd g gd d dg fg dfg dfg fdg dg dgfdggd gd",
         "imgSrc": "",
-        "id": "ce686e51-0794-4479-be54-7f43c4533797",
-        "direction": "receiver",
-        "edit": false
+        "id": "3c1fea2b-64c8-400f-8b2b-2f45f1481a5c",
+        "direction": "sender"
       },
       {
-        "message": "slem",
-        "imgSrc": "",
-        "id": "eb0aed30-db6e-4718-90d5-dcbe782cc06b",
-        "direction": "receiver",
-        "edit": false
-      },
-      {
-        "message": "",
+        "message": "fddffdfdfc",
         "imgSrc": "https://images.koji-cdn.com/14c02947-0b36-4b2b-ace3-6d205bb84e3b/f07ou-download20200602T105237.814.png",
-        "id": "6b7ff12a-37fb-45e7-b06f-5e264d6ac998",
-        "direction": "sender",
-        "edit": false
+        "id": "c39ccc6f-2aa7-4807-93f9-6250d21c4eb9",
+        "direction": "sender"
       },
       {
-        "message": "dffd",
+        "message": "fddffdfdfc",
+        "imgSrc": "https://images.koji-cdn.com/14c02947-0b36-4b2b-ace3-6d205bb84e3b/j51x8-download4.png",
+        "id": "1dd15fcf-d2b7-4d3f-ad16-2da0bb2c41e1",
+        "direction": "sender"
+      },
+      {
+        "message": "ffdgdgdgdgdfdfgdfdgdgdgdg",
         "imgSrc": "",
-        "id": "465c3c5e-608a-4db3-8a81-21e46fe9b034",
+        "id": "6459fa1b-54be-4335-bc49-91daef6a5561",
         "direction": "receiver"
       }
     ],
@@ -119,8 +108,8 @@
       "id": 10000
     },
     "senderMessage": {
-      "message": "fddffdfdf",
-      "imgSrc": "https://images.koji-cdn.com/14c02947-0b36-4b2b-ace3-6d205bb84e3b/f07ou-download20200602T105237.814.png",
+      "message": "fddffdfdfc",
+      "imgSrc": "https://images.koji-cdn.com/14c02947-0b36-4b2b-ace3-6d205bb84e3b/j51x8-download4.png",
       "id": 10000
     }
   },

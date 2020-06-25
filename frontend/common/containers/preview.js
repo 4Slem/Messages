@@ -14,60 +14,19 @@ class Preview extends React.Component {
   outSound = null;
   myRef = React.createRef();
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      messages: [],
-      loader: false,
-      typingText: '',
-      camera: false
-    };
-  }
-
+  state = {
+    messages: [],
+    loader: false,
+    typingText: '',
+    camera: false
+  };
 
   componentDidMount() {
-    this.showNewMessage(0)
-    // this.inSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'inSound'])]});
-    // this.outSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'outSound'])]});
-    // const elem = document.querySelector('.messages-list');
-    // let i = 0;
-    // const l = this.props.messages.list.length;
-    // this.timer = setInterval(() => {
-    //   if (this.props.messages.list[i + 1] && this.props.messages.list[i + 1].direction !== 'receiver') {
-    //     this.setState({
-    //       loader: true
-    //     });
-    //   } else {
-    //     this.setState({
-    //         loader: false
-    //     });
-    //   }
-    //   // if (this.props.messages.list[i].direction === 'receiver') {
-    //   //   this.inSound.play();
-    //   // } else {
-    //   //   this.outSound.play();
-    //   // }
-
-    //   if (i === l - 1) {
-    //     clearInterval(this.timer)
-    //   }
-
-
-    //   this.setState({
-    //     messages: [...this.state.messages, this.props.messages.list[i]]
-    //   });
-
-    //   i = i + 1;
-
-    //   this.myRef.scrollTop = elem.scrollTop + 10000
-    // },2000);
-
-    
-    console.log('ref', this.myRef);
+    this.showNewMessage(0);
   }
 
   showNewMessage(i) {
-    if (i === this.props.messages.list.length - 1) return;
+    if (i === this.props.messages.list.length) return;
 
     const item = this.props.messages.list[i];
     let messageLength = item.message.length;
@@ -75,7 +34,7 @@ class Preview extends React.Component {
     let char = 0;
 
     this.setState({ loader: !isReciver });
-
+   
     if (item.imgSrc) {
       messageLength = 15;
       if (isReciver) {
@@ -89,9 +48,20 @@ class Preview extends React.Component {
         this.setState({
           messages: [...this.state.messages, item],
           typingText: '',
-          camera: false
+          camera: false,
+          loader: false
         });
-        this.myRef.scrollTop = this.myRef.scrollTop + 10000;
+        // this.inSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'inSound'])]});
+        // this.outSound = new Howl({ src : [this.props.instantRemixing.get(['messagesSettings', 'outSound'])]});
+  
+        // if (this.props.messages.list[i].direction === 'receiver') {
+        //   this.inSound.play();
+        // } else {
+        //   this.outSound.play();
+        // }
+        setTimeout(() => {
+          this.myRef.scrollTop = this.myRef.scrollTop + 10000;
+        }, 100)
         this.showNewMessage(i + 1);
         return;
       }
@@ -142,8 +112,7 @@ const mapStatetoProps = (state) => {
     instantRemixing: state.vccReducer.instantRemixing,
     messages: state.messagesReducer,
     receiverMessage: state.controlsReducer.receiverMessage,
-    senderMessage: state.controlsReducer.senderMessage,
-    isRemixing: state.vccReducer.isRemixing
+    senderMessage: state.controlsReducer.senderMessage
   }
 }
 

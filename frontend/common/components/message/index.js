@@ -7,7 +7,7 @@ const Message = ({ data, click }) => {
     const [animation, setAnimation] = useState(false);
     setTimeout(() => {
         setAnimation(true);
-    }, 10);
+    }, 100);
 
     const isReceiver = data.direction === 'receiver';
   
