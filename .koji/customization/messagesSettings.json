@@ -5,7 +5,7 @@
     "messages": [
       {
         "direction": "receiver",
-        "message": "receisdffsdfdsf",
+        "message": "recei",
         "id": "299cfbb6-f9a9-4347-a35a-c3b709ba3825",
         "edit": false
       },
@@ -20,7 +20,7 @@
         "imgSrc": null,
         "id": "d22cca74-8ce1-4c80-9f1a-4f2148d7a048",
         "direction": "sender",
-        "edit": true
+        "edit": false
       },
       {
         "message": "sdfddfdsdddfssdfdssdfs",
@@ -30,73 +30,69 @@
         "edit": false
       },
       {
-        "message": "kkmessage 3",
+        "message": "message 3",
         "imgSrc": null,
         "id": "b46177ff-60bf-46d3-9475-52c548c58169",
-        "direction": "receiver"
+        "direction": "receiver",
+        "edit": false
       },
       {
         "message": "message",
         "imgSrc": null,
         "id": "c2825533-bcf7-4ddd-a857-2f97672681bc",
-        "direction": "sender"
+        "direction": "sender",
+        "edit": false
       },
       {
         "message": "message",
         "imgSrc": null,
         "id": "e283eea6-7f66-4e2b-8009-534449bb98b0",
-        "direction": "sender"
+        "direction": "sender",
+        "edit": false
       },
       {
         "message": "message 3fsfdsf",
         "imgSrc": null,
         "id": "e40cb014-1c3d-4661-866b-5b8657a7816c",
-        "direction": "receiver"
+        "direction": "receiver",
+        "edit": false
       },
       {
         "message": "message 3fsfdsf",
         "imgSrc": null,
         "id": "e145a868-541c-4546-a88c-944b81e5184a",
-        "direction": "receiver"
+        "direction": "receiver",
+        "edit": false
       },
       {
         "message": "fdffff",
         "imgSrc": "https://images.koji-cdn.com/14c02947-0b36-4b2b-ace3-6d205bb84e3b/o4oij-download20200602T105209.694.png",
         "id": "c7729c81-a012-4f48-880b-45411aa3fc15",
-        "direction": "receiver"
+        "direction": "receiver",
+        "edit": true
       },
       {
-        "message": "dfdffdfdd jkjk",
+        "message": "dfdffdfdd",
         "imgSrc": "",
         "id": "a02aec89-d587-486b-94b1-444e21cc728f",
-        "direction": "receiver"
+        "direction": "receiver",
+        "edit": false
       },
       {
         "message": "dfdffdfddfddfffdf",
         "imgSrc": "",
         "id": "f12bb551-d79c-4013-9c74-e959d4350bdc",
-        "direction": "receiver"
-      },
-      {
-        "message": "fdfdddsd dfgd g gd d dg fg dfg dfg fdg dg dgfdggd gd",
-        "imgSrc": "",
-        "id": "8dca10a1-eb87-4bbd-bfc4-87d81c06dcb9",
-        "direction": "sender"
-      },
-      {
-        "message": "34344",
-        "imgSrc": "",
-        "id": "7c24f40b-a8c5-4bf7-b301-9bb3b09379e6",
-        "direction": "sender"
+        "direction": "receiver",
+        "edit": false
       }
     ],
     "receiverMessage": {
-      "message": "dfdffdfddfddfffdf",
+      "message": "dfdff",
       "imgSrc": "",
       "id": 10000
     },
     "senderMessage": {
-      "message": "34344",
+      "message": "3",
       "imgSrc": "",
       "id": 10000
     }
