@@ -6,6 +6,8 @@ import './assets/scss/phone.scss';
 import { onSetRemixing } from './store/actions/vcc.js';
 import { editUserName, editUserImage } from './store/actions/user.js';
 import { addMessages, editMessage } from './store/actions/messages.js';
+import { updateReceiver, updateSender } from './store/actions/controls.js';
+
 
 import Editing from './containers/editing.js';
 import Preview from './containers/preview.js';
@@ -37,6 +39,10 @@ class App extends React.Component {
           this.props.editMessage(newValue);
         } else if (path[1] === 'messages') {
           this.props.addMessages(newValue);
+        } else if (path[1] === 'receiverMessage') {
+          this.props.updateReceiver(newValue);
+        } else if (path[1] === 'senderMessage') {
+          this.props.updateSender(newValue);
         }
       }
     });
@@ -47,8 +53,9 @@ class App extends React.Component {
   }
 
   initUser() {
-    this.props.editUserName(this.props.vcc.instantRemixing.get(['userSettings', 'userName']));
-    this.props.editUserImage(this.props.vcc.instantRemixing.get(['userSettings', 'userImage']));
+    const data = this.props.vcc.instantRemixing.get(['userSettings']);
+    this.props.editUserName(data.userName);
+    this.props.editUserImage(data.userImage);
   }
 
   initMessages() {
@@ -56,9 +63,9 @@ class App extends React.Component {
   }
 
   initControlls() {
-    console.log(this.props.vcc.instantRemixing.get(['messagesSettings']));
-    console.log(this.props.vcc.instantRemixing.get(['controlSttings']));
-    // console.log(this.props.vcc.instantRemixing.get(['controlSttings', 'senderMessage']))
+    const data = this.props.vcc.instantRemixing.get(['messagesSettings']);
+    this.props.updateSender(data.senderMessage)
+    this.props.updateReceiver(data.receiverMessage)
   }
 
   render() {
@@ -81,7 +88,7 @@ class App extends React.Component {
           </div>
           <div className="inner-shadow" />
           <div className="screen">
-            <Editing />
+            { this.props.vcc.isRemixing ? <Preview /> : <Editing /> }
           </div>
         </div>
       </div>
@@ -111,6 +118,12 @@ const mapDispatchToProps = (dispatch) => {
     },
     editMessage(data) {
       dispatch(editMessage(data));
+    },
+    updateReceiver(data) {
+        dispatch(updateReceiver(data));
+    },
+    updateSender(data) {
+        dispatch(updateSender(data));
     }
   };
 };

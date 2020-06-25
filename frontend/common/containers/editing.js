@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { v4 as uuid } from 'uuid';
 
 import { selectMessage, deleteMessage, deleteAllMessages } from '../store/actions/messages.js';
 
@@ -16,7 +17,7 @@ const Editing = (props) => {
 
     const deleteAll = () => {
       props.deleteAllMessages();
-      props.instantRemixing.onSetValue(['messagesSettings', 'messages'], null);
+      props.instantRemixing.onSetValue(['messagesSettings', 'messages'], []);
     };
 
     const select = (message, i) => {
@@ -26,8 +27,16 @@ const Editing = (props) => {
     };
 
     const deleteM = (message) => {
-        props.deleteMessage(message.id);
-        props.instantRemixing.onSetValue(['messagesSettings', 'messages'], props.messages.list);
+        // props.deleteMessage(message.id);
+        const arr = [...props.messages.list];
+        arr = arr.filter(item => item.id !== message.id);
+        props.instantRemixing.onSetValue(['messagesSettings', `messages`, i], null);
+    };
+
+    const sent = (key) => {
+      const arr = [...props.messages.list];
+      arr.push({...props[key], direction: key === 'receiverMessage' ? 'receiver' : 'sender', id: uuid()});
+      props.instantRemixing.onSetValue(['messagesSettings', 'messages'], arr);
     };
 
     return (
@@ -55,42 +64,30 @@ const Editing = (props) => {
                             key={i}
                             data={item}
                             editMessage={() => props.instantRemixing.onPresentControl(['messagesSettings', `messages`, i, 'message'])}
-                            deleteMessage={() => deleteM(item)}
+                            deleteMessage={() => deleteM(item, i)}
                             editImage={() => props.instantRemixing.onPresentControl(['messagesSettings', `messages`, i, 'imgSrc'])}
-                            // sentMessage={}
+                            // sentMessage={sent}
                         /> 
                     }
                 </>
               );
             })
           }
-          {
-              
-          }
-           <div className="controlls">
+              <div className="controlls">
                 <EditMessage
-                    data={{...props.senderrMessage, direction: 'sender'}}
-                    editMessage={() => props.instantRemixing.onPresentControl(['controlSttings', 'senderMessage', 'message'])}
+                    data={{...props.senderMessage, direction: 'sender'}}
+                    editMessage={() => props.instantRemixing.onPresentControl(['messagesSettings', 'senderMessage', 'message'])}
                     // deleteMessage={}
-                    editImage={() => props.instantRemixing.onPresentControl(['controlSttings', 'senderMessage', 'imgSrc'])}
-                    // sentMessage={}
+                    editImage={() => props.instantRemixing.onPresentControl(['messagesSettings', 'senderMessage', 'imgSrc'])}
+                    sentMessage={() => sent('senderMessage')}
                 />
                 <EditMessage
                     data={{...props.receiverMessage, direction: 'receiver'}}
-                    editMessage={() => props.instantRemixing.onPresentControl(['controlSttings', 'receiverMessage', 'message'])}
+                    editMessage={() => props.instantRemixing.onPresentControl(['messagesSettings', 'receiverMessage', 'message'])}
                     // deleteMessage={}
-                    editImage={() => props.instantRemixing.onPresentControl(['controlSttings', 'receiverMessage', 'imgSrc'])}
-                    // sentMessage={}
+                    editImage={() => props.instantRemixing.onPresentControl(['messagesSettings', 'receiverMessage', 'imgSrc'])}
+                    sentMessage={() => sent('receiverMessage')}
                 />
-            </div>
-        </div>
-
-        <div className="footer">
-            <div className="footer__icon">
-                <img src={cameraIcon} />
-            </div>
-            <div className="footer__input">
-                <input type="text" className="input" placeholder="Message" />
             </div>
         </div>
         <div className="bottom-line" />
@@ -104,7 +101,8 @@ const mapStatetoProps = (state) => {
     instantRemixing: state.vccReducer.instantRemixing,
     messages: state.messagesReducer,
     receiverMessage: state.controlsReducer.receiverMessage,
-    senderMessage: state.controlsReducer.senderMessage
+    senderMessage: state.controlsReducer.senderMessage,
+    isRemixing: state.vccReducer.isRemixing
   }
 }
 

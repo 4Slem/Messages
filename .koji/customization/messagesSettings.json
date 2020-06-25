@@ -1,26 +1,59 @@
 {
   "messagesSettings": {
-      "roman": "roma",
+    "roman": "roma",
     "messages": [
       {
         "direction": "receiver",
-        "message": "receiver",
-        "id": "299cfbb6-f9a9-4347-a35a-c3b709ba3825"
+        "message": "recei",
+        "id": "299cfbb6-f9a9-4347-a35a-c3b709ba3825",
+        "edit": false
       },
       {
         "direction": "sender",
-        "message": "sender",
-        "id": "76de58ba-9da4-4a31-ae92-c9de8bcd6f07"
+        "message": "2",
+        "id": "76de58ba-9da4-4a31-ae92-c9de8bcd6f07",
+        "edit": false
       },
-      {}
+      {
+        "message": "sendersdfsdfsdf",
+        "imgSrc": null,
+        "id": "d22cca74-8ce1-4c80-9f1a-4f2148d7a048",
+        "direction": "sender",
+        "edit": true
+      },
+      {
+        "message": "sdfddfdsdddfssdfdssdfs",
+        "imgSrc": null,
+        "id": "b3053858-0771-494f-a2d6-9a54c0bff65e",
+        "direction": "receiver",
+        "edit": false
+      },
+      {
+        "message": "message 3",
+        "imgSrc": null,
+        "id": "b46177ff-60bf-46d3-9475-52c548c58169",
+        "direction": "receiver"
+      },
+      {
+        "message": "message",
+        "imgSrc": null,
+        "id": "c2825533-bcf7-4ddd-a857-2f97672681bc",
+        "direction": "sender"
+      },
+      {
+        "message": "message",
+        "imgSrc": null,
+        "id": "e283eea6-7f66-4e2b-8009-534449bb98b0",
+        "direction": "sender"
+      }
     ],
     "receiverMessage": {
-      "message": "sdfd",
+      "message": "message 3",
       "imgSrc": null,
       "id": 10000
     },
     "senderMessage": {
-      "message": "",
+      "message": "message",
       "imgSrc": null,
       "id": 10000
     }
@@ -32,7 +65,7 @@
       "icon": "⚙️",
       "source": "messagesSettings.json",
       "fields": [
-                {
+        {
           "key": "roma",
           "name": "roma",
           "type": "text"

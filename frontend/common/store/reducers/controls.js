@@ -22,6 +22,7 @@ const reducer = (state = initialState, action) => {
         }
     }
     case UPDATE_SENDER: {
+      console.log('sender: ', action.payload)
         return {
             ...state,
             senderMessage: action.payload
