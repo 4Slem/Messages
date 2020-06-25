@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './index.scss';
 
 export default ({isReciver}) => {
+    const [animation, setAnimation] = useState(false);
+    setTimeout(() => {
+        setAnimation(true);
+    }, 10);
+
     return (
         <div className={`typing-indicator-wrap ${isReciver === 'receiver' ? 'left' : ''}`}>
-            <div className="typing-indicator">
+            <div className={`typing-indicator ${animation && 'animation'}`}>
                 <span></span>
                 <span></span>
                 <span></span>
